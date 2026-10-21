@@ -9,6 +9,12 @@ import sys
 from pathlib import Path
 import yt_dlp
 
+try:
+    import static_ffmpeg
+    static_ffmpeg.add_paths()
+except ImportError:
+    pass
+
 class MusicDownloader:
     def __init__(self):
         self.selected_tracks = set()
